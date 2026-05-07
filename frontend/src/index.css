@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914;
+}
+
+/* dropdown scrollbar */
+.dropdown-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown-scroll::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+.dropdown-scroll::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 2px;
+}
+
+/* poster crossfade */
+.poster-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: opacity;
+}
+
+/* skeleton pulse */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+.skeleton {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+/* card glow on hover */
+.movie-card:hover .card-glow {
+  opacity: 1;
+}
+.card-glow {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
